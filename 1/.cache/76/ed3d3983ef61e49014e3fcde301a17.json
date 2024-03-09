@@ -1,0 +1,1615 @@
+{
+  "id": "src/index.ts",
+  "dependencies": [
+    {
+      "name": "C:\\Users\\Ashra\\Desktop\\New folder (4)\\1\\tsconfig.json",
+      "includedInParent": true,
+      "mtime": 1709986174427
+    },
+    {
+      "name": "C:\\Users\\Ashra\\Desktop\\New folder (4)\\1\\package.json",
+      "includedInParent": true,
+      "mtime": 1709985987406
+    }
+  ],
+  "generated": {
+    "js": "\"use strict\";\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.default = void 0;\nfunction _typeof(o) { \"@babel/helpers - typeof\"; return _typeof = \"function\" == typeof Symbol && \"symbol\" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && \"function\" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? \"symbol\" : typeof o; }, _typeof(o); }\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\nfunction _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }\nfunction _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, \"prototype\", { writable: false }); return Constructor; }\nfunction _toPropertyKey(t) { var i = _toPrimitive(t, \"string\"); return \"symbol\" == _typeof(i) ? i : String(i); }\nfunction _toPrimitive(t, r) { if (\"object\" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || \"default\"); if (\"object\" != _typeof(i)) return i; throw new TypeError(\"@@toPrimitive must return a primitive value.\"); } return (\"string\" === r ? String : Number)(t); }\nvar TimePeriodService = /*#__PURE__*/function () {\n  function TimePeriodService() {\n    _classCallCheck(this, TimePeriodService);\n  }\n  _createClass(TimePeriodService, null, [{\n    key: \"extractTimePeriod\",\n    value: function extractTimePeriod(period) {\n      var dates = period.split('-').map(function (date) {\n        return date.trim();\n      });\n      if (dates.length !== 2 || dates.some(function (date) {\n        return date.length !== 10;\n      })) {\n        return null;\n      }\n      return {\n        startDate: dates[0],\n        endDate: dates[1]\n      };\n    }\n  }, {\n    key: \"extractTimePeriods\",\n    value: function extractTimePeriods(periods) {\n      return periods.map(function (period) {\n        var timePeriod = TimePeriodService.extractTimePeriod(period);\n        if (!timePeriod) {\n          throw new Error('string length is invalid');\n        }\n        return timePeriod;\n      });\n    }\n  }]);\n  return TimePeriodService;\n}();\nvar ExtractDatesApplication = /*#__PURE__*/function () {\n  function ExtractDatesApplication() {\n    _classCallCheck(this, ExtractDatesApplication);\n  }\n  _createClass(ExtractDatesApplication, [{\n    key: \"extractDates\",\n    value: function extractDates(customer) {\n      if (!customer.ListOfPeriods) return [];\n      if (customer.ListOfPeriods.toUpperCase() === 'NULL') return [];\n      var periods = customer.ListOfPeriods.split('|').map(function (period) {\n        return period.trim();\n      });\n      try {\n        return TimePeriodService.extractTimePeriods(periods);\n      } catch (error) {\n        return [error.message];\n      }\n    }\n  }]);\n  return ExtractDatesApplication;\n}();\nvar extractDates = new ExtractDatesApplication().extractDates;\nvar _default = exports.default = extractDates;"
+  },
+  "sourceMaps": {
+    "js": {
+      "mappings": [
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 10, "column": 6 },
+          "generated": { "line": 13, "column": 4 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 10, "column": 23 },
+          "generated": { "line": 13, "column": 21 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 10, "column": 23 },
+          "generated": { "line": 14, "column": 2 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 10, "column": 23 },
+          "generated": { "line": 14, "column": 11 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 10, "column": 23 },
+          "generated": { "line": 14, "column": 29 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 10, "column": 23 },
+          "generated": { "line": 15, "column": 4 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 10, "column": 23 },
+          "generated": { "line": 15, "column": 19 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 10, "column": 23 },
+          "generated": { "line": 15, "column": 26 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 10, "column": 23 },
+          "generated": { "line": 15, "column": 43 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 10, "column": 23 },
+          "generated": { "line": 16, "column": 2 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 10, "column": 23 },
+          "generated": { "line": 17, "column": 2 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 10, "column": 23 },
+          "generated": { "line": 17, "column": 14 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 10, "column": 23 },
+          "generated": { "line": 17, "column": 15 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 10, "column": 23 },
+          "generated": { "line": 17, "column": 32 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 10, "column": 23 },
+          "generated": { "line": 18, "column": 4 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 10, "column": 23 },
+          "generated": { "line": 18, "column": 7 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 10, "column": 23 },
+          "generated": { "line": 19, "column": 4 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 10, "column": 23 },
+          "generated": { "line": 19, "column": 9 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 11, "column": 2 },
+          "generated": { "line": 19, "column": 11 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 11, "column": 2 },
+          "generated": { "line": 19, "column": 20 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 11, "column": 27 },
+          "generated": { "line": 19, "column": 38 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 11, "column": 41 },
+          "generated": { "line": 19, "column": 44 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 11, "column": 41 },
+          "generated": { "line": 19, "column": 46 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 12, "column": 4 },
+          "generated": { "line": 20, "column": 6 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 12, "column": 10 },
+          "generated": { "line": 20, "column": 10 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 12, "column": 15 },
+          "generated": { "line": 20, "column": 15 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 12, "column": 18 },
+          "generated": { "line": 20, "column": 18 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 12, "column": 24 },
+          "generated": { "line": 20, "column": 24 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 12, "column": 25 },
+          "generated": { "line": 20, "column": 25 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 12, "column": 30 },
+          "generated": { "line": 20, "column": 30 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 12, "column": 31 },
+          "generated": { "line": 20, "column": 31 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 12, "column": 34 },
+          "generated": { "line": 20, "column": 34 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 12, "column": 35 },
+          "generated": { "line": 20, "column": 35 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 12, "column": 36 },
+          "generated": { "line": 20, "column": 36 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 12, "column": 39 },
+          "generated": { "line": 20, "column": 39 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 12, "column": 40 },
+          "generated": { "line": 20, "column": 40 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 12, "column": 40 },
+          "generated": { "line": 20, "column": 50 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 12, "column": 44 },
+          "generated": { "line": 20, "column": 54 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 12, "column": 44 },
+          "generated": { "line": 21, "column": 8 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 12, "column": 48 },
+          "generated": { "line": 21, "column": 15 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 12, "column": 52 },
+          "generated": { "line": 21, "column": 19 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 12, "column": 53 },
+          "generated": { "line": 21, "column": 20 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 12, "column": 57 },
+          "generated": { "line": 21, "column": 24 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 12, "column": 57 },
+          "generated": { "line": 21, "column": 25 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 12, "column": 59 },
+          "generated": { "line": 21, "column": 26 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 12, "column": 59 },
+          "generated": { "line": 22, "column": 6 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 12, "column": 60 },
+          "generated": { "line": 22, "column": 8 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 13, "column": 4 },
+          "generated": { "line": 23, "column": 6 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 13, "column": 8 },
+          "generated": { "line": 23, "column": 10 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 13, "column": 13 },
+          "generated": { "line": 23, "column": 15 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 13, "column": 14 },
+          "generated": { "line": 23, "column": 16 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 13, "column": 20 },
+          "generated": { "line": 23, "column": 22 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 13, "column": 25 },
+          "generated": { "line": 23, "column": 27 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 13, "column": 26 },
+          "generated": { "line": 23, "column": 28 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 13, "column": 30 },
+          "generated": { "line": 23, "column": 32 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 13, "column": 35 },
+          "generated": { "line": 23, "column": 37 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 13, "column": 36 },
+          "generated": { "line": 23, "column": 38 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 13, "column": 40 },
+          "generated": { "line": 23, "column": 42 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 13, "column": 41 },
+          "generated": { "line": 23, "column": 43 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 13, "column": 41 },
+          "generated": { "line": 23, "column": 53 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 13, "column": 45 },
+          "generated": { "line": 23, "column": 57 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 13, "column": 45 },
+          "generated": { "line": 24, "column": 8 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 13, "column": 49 },
+          "generated": { "line": 24, "column": 15 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 13, "column": 53 },
+          "generated": { "line": 24, "column": 19 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 13, "column": 54 },
+          "generated": { "line": 24, "column": 20 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 13, "column": 60 },
+          "generated": { "line": 24, "column": 26 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 13, "column": 65 },
+          "generated": { "line": 24, "column": 31 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 13, "column": 67 },
+          "generated": { "line": 24, "column": 33 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 13, "column": 67 },
+          "generated": { "line": 25, "column": 6 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 13, "column": 68 },
+          "generated": { "line": 25, "column": 8 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 13, "column": 70 },
+          "generated": { "line": 25, "column": 10 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 14, "column": 6 },
+          "generated": { "line": 26, "column": 8 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 14, "column": 13 },
+          "generated": { "line": 26, "column": 15 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 14, "column": 17 },
+          "generated": { "line": 26, "column": 19 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 16, "column": 4 },
+          "generated": { "line": 28, "column": 6 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 16, "column": 11 },
+          "generated": { "line": 28, "column": 13 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 17, "column": 6 },
+          "generated": { "line": 29, "column": 8 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 17, "column": 15 },
+          "generated": { "line": 29, "column": 17 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 17, "column": 17 },
+          "generated": { "line": 29, "column": 19 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 17, "column": 22 },
+          "generated": { "line": 29, "column": 24 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 17, "column": 23 },
+          "generated": { "line": 29, "column": 25 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 17, "column": 24 },
+          "generated": { "line": 29, "column": 26 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 17, "column": 25 },
+          "generated": { "line": 29, "column": 27 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 18, "column": 6 },
+          "generated": { "line": 30, "column": 8 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 18, "column": 13 },
+          "generated": { "line": 30, "column": 15 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 18, "column": 15 },
+          "generated": { "line": 30, "column": 17 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 18, "column": 20 },
+          "generated": { "line": 30, "column": 22 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 18, "column": 21 },
+          "generated": { "line": 30, "column": 23 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 18, "column": 22 },
+          "generated": { "line": 30, "column": 24 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 19, "column": 5 },
+          "generated": { "line": 31, "column": 7 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 20, "column": 2 },
+          "generated": { "line": 32, "column": 4 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 20, "column": 3 },
+          "generated": { "line": 33, "column": 2 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 20, "column": 3 },
+          "generated": { "line": 34, "column": 4 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 20, "column": 3 },
+          "generated": { "line": 34, "column": 7 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 20, "column": 3 },
+          "generated": { "line": 35, "column": 4 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 20, "column": 3 },
+          "generated": { "line": 35, "column": 9 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 22, "column": 2 },
+          "generated": { "line": 35, "column": 11 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 22, "column": 2 },
+          "generated": { "line": 35, "column": 20 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 22, "column": 28 },
+          "generated": { "line": 35, "column": 39 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 22, "column": 45 },
+          "generated": { "line": 35, "column": 46 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 22, "column": 45 },
+          "generated": { "line": 35, "column": 48 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 23, "column": 4 },
+          "generated": { "line": 36, "column": 6 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 23, "column": 11 },
+          "generated": { "line": 36, "column": 13 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 23, "column": 18 },
+          "generated": { "line": 36, "column": 20 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 23, "column": 19 },
+          "generated": { "line": 36, "column": 21 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 23, "column": 22 },
+          "generated": { "line": 36, "column": 24 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 23, "column": 23 },
+          "generated": { "line": 36, "column": 25 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 23, "column": 23 },
+          "generated": { "line": 36, "column": 35 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 23, "column": 29 },
+          "generated": { "line": 36, "column": 41 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 23, "column": 32 },
+          "generated": { "line": 36, "column": 43 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 24, "column": 6 },
+          "generated": { "line": 37, "column": 8 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 24, "column": 12 },
+          "generated": { "line": 37, "column": 12 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 24, "column": 22 },
+          "generated": { "line": 37, "column": 22 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 24, "column": 25 },
+          "generated": { "line": 37, "column": 25 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 24, "column": 42 },
+          "generated": { "line": 37, "column": 42 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 24, "column": 43 },
+          "generated": { "line": 37, "column": 43 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 24, "column": 60 },
+          "generated": { "line": 37, "column": 60 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 24, "column": 61 },
+          "generated": { "line": 37, "column": 61 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 24, "column": 67 },
+          "generated": { "line": 37, "column": 67 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 24, "column": 68 },
+          "generated": { "line": 37, "column": 68 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 25, "column": 6 },
+          "generated": { "line": 38, "column": 8 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 25, "column": 10 },
+          "generated": { "line": 38, "column": 12 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 25, "column": 11 },
+          "generated": { "line": 38, "column": 13 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 25, "column": 21 },
+          "generated": { "line": 38, "column": 23 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 25, "column": 23 },
+          "generated": { "line": 38, "column": 25 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 26, "column": 8 },
+          "generated": { "line": 39, "column": 10 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 26, "column": 14 },
+          "generated": { "line": 39, "column": 16 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 26, "column": 18 },
+          "generated": { "line": 39, "column": 20 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 26, "column": 23 },
+          "generated": { "line": 39, "column": 25 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 26, "column": 24 },
+          "generated": { "line": 39, "column": 26 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 26, "column": 50 },
+          "generated": { "line": 39, "column": 52 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 26, "column": 51 },
+          "generated": { "line": 39, "column": 53 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 28, "column": 6 },
+          "generated": { "line": 41, "column": 8 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 28, "column": 13 },
+          "generated": { "line": 41, "column": 15 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 28, "column": 23 },
+          "generated": { "line": 41, "column": 25 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 29, "column": 4 },
+          "generated": { "line": 42, "column": 6 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 29, "column": 5 },
+          "generated": { "line": 42, "column": 7 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 29, "column": 6 },
+          "generated": { "line": 42, "column": 8 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 30, "column": 2 },
+          "generated": { "line": 43, "column": 4 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 30, "column": 3 },
+          "generated": { "line": 44, "column": 2 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 30, "column": 3 },
+          "generated": { "line": 45, "column": 2 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 30, "column": 3 },
+          "generated": { "line": 45, "column": 9 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 30, "column": 3 },
+          "generated": { "line": 45, "column": 26 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 30, "column": 3 },
+          "generated": { "line": 46, "column": 0 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 30, "column": 3 },
+          "generated": { "line": 47, "column": 0 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 33, "column": 6 },
+          "generated": { "line": 47, "column": 4 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 33, "column": 29 },
+          "generated": { "line": 47, "column": 27 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 33, "column": 29 },
+          "generated": { "line": 48, "column": 2 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 33, "column": 29 },
+          "generated": { "line": 48, "column": 11 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 33, "column": 29 },
+          "generated": { "line": 48, "column": 35 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 33, "column": 29 },
+          "generated": { "line": 49, "column": 4 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 33, "column": 29 },
+          "generated": { "line": 49, "column": 19 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 33, "column": 29 },
+          "generated": { "line": 49, "column": 26 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 33, "column": 29 },
+          "generated": { "line": 49, "column": 49 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 33, "column": 29 },
+          "generated": { "line": 50, "column": 2 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 33, "column": 29 },
+          "generated": { "line": 51, "column": 2 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 33, "column": 29 },
+          "generated": { "line": 51, "column": 14 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 33, "column": 29 },
+          "generated": { "line": 51, "column": 15 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 33, "column": 29 },
+          "generated": { "line": 51, "column": 38 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 33, "column": 29 },
+          "generated": { "line": 52, "column": 4 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 33, "column": 29 },
+          "generated": { "line": 52, "column": 7 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 33, "column": 29 },
+          "generated": { "line": 53, "column": 4 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 33, "column": 29 },
+          "generated": { "line": 53, "column": 9 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 34, "column": 2 },
+          "generated": { "line": 53, "column": 11 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 34, "column": 2 },
+          "generated": { "line": 53, "column": 20 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 34, "column": 15 },
+          "generated": { "line": 53, "column": 33 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 34, "column": 33 },
+          "generated": { "line": 53, "column": 41 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 34, "column": 33 },
+          "generated": { "line": 53, "column": 43 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 35, "column": 4 },
+          "generated": { "line": 54, "column": 6 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 35, "column": 8 },
+          "generated": { "line": 54, "column": 10 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 35, "column": 9 },
+          "generated": { "line": 54, "column": 11 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 35, "column": 17 },
+          "generated": { "line": 54, "column": 19 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 35, "column": 18 },
+          "generated": { "line": 54, "column": 20 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 35, "column": 31 },
+          "generated": { "line": 54, "column": 33 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 35, "column": 33 },
+          "generated": { "line": 54, "column": 35 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 35, "column": 40 },
+          "generated": { "line": 54, "column": 42 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 35, "column": 42 },
+          "generated": { "line": 54, "column": 44 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 37, "column": 4 },
+          "generated": { "line": 55, "column": 6 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 37, "column": 8 },
+          "generated": { "line": 55, "column": 10 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 37, "column": 16 },
+          "generated": { "line": 55, "column": 18 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 37, "column": 17 },
+          "generated": { "line": 55, "column": 19 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 37, "column": 30 },
+          "generated": { "line": 55, "column": 32 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 37, "column": 31 },
+          "generated": { "line": 55, "column": 33 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 37, "column": 42 },
+          "generated": { "line": 55, "column": 44 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 37, "column": 42 },
+          "generated": { "line": 55, "column": 45 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 37, "column": 44 },
+          "generated": { "line": 55, "column": 46 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 37, "column": 49 },
+          "generated": { "line": 55, "column": 51 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 37, "column": 55 },
+          "generated": { "line": 55, "column": 57 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 37, "column": 57 },
+          "generated": { "line": 55, "column": 59 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 37, "column": 64 },
+          "generated": { "line": 55, "column": 66 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 37, "column": 66 },
+          "generated": { "line": 55, "column": 68 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 39, "column": 4 },
+          "generated": { "line": 56, "column": 6 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 39, "column": 10 },
+          "generated": { "line": 56, "column": 10 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 39, "column": 17 },
+          "generated": { "line": 56, "column": 17 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 39, "column": 30 },
+          "generated": { "line": 56, "column": 20 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 39, "column": 38 },
+          "generated": { "line": 56, "column": 28 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 39, "column": 39 },
+          "generated": { "line": 56, "column": 29 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 39, "column": 52 },
+          "generated": { "line": 56, "column": 42 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 39, "column": 53 },
+          "generated": { "line": 56, "column": 43 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 39, "column": 58 },
+          "generated": { "line": 56, "column": 48 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 39, "column": 59 },
+          "generated": { "line": 56, "column": 49 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 39, "column": 62 },
+          "generated": { "line": 56, "column": 52 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 39, "column": 63 },
+          "generated": { "line": 56, "column": 53 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 39, "column": 64 },
+          "generated": { "line": 56, "column": 54 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 39, "column": 67 },
+          "generated": { "line": 56, "column": 57 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 39, "column": 68 },
+          "generated": { "line": 56, "column": 58 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 39, "column": 68 },
+          "generated": { "line": 56, "column": 68 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 39, "column": 74 },
+          "generated": { "line": 56, "column": 74 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 39, "column": 74 },
+          "generated": { "line": 57, "column": 8 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 39, "column": 78 },
+          "generated": { "line": 57, "column": 15 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 39, "column": 84 },
+          "generated": { "line": 57, "column": 21 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 39, "column": 85 },
+          "generated": { "line": 57, "column": 22 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 39, "column": 89 },
+          "generated": { "line": 57, "column": 26 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 39, "column": 89 },
+          "generated": { "line": 57, "column": 27 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 39, "column": 91 },
+          "generated": { "line": 57, "column": 28 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 39, "column": 91 },
+          "generated": { "line": 58, "column": 6 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 39, "column": 92 },
+          "generated": { "line": 58, "column": 8 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 41, "column": 4 },
+          "generated": { "line": 59, "column": 6 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 41, "column": 8 },
+          "generated": { "line": 59, "column": 10 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 42, "column": 6 },
+          "generated": { "line": 60, "column": 8 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 42, "column": 13 },
+          "generated": { "line": 60, "column": 15 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 42, "column": 30 },
+          "generated": { "line": 60, "column": 32 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 42, "column": 31 },
+          "generated": { "line": 60, "column": 33 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 42, "column": 49 },
+          "generated": { "line": 60, "column": 51 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 42, "column": 50 },
+          "generated": { "line": 60, "column": 52 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 42, "column": 57 },
+          "generated": { "line": 60, "column": 59 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 42, "column": 58 },
+          "generated": { "line": 60, "column": 60 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 43, "column": 5 },
+          "generated": { "line": 61, "column": 7 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 43, "column": 6 },
+          "generated": { "line": 61, "column": 8 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 43, "column": 13 },
+          "generated": { "line": 61, "column": 15 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 43, "column": 18 },
+          "generated": { "line": 61, "column": 20 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 43, "column": 20 },
+          "generated": { "line": 61, "column": 22 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 44, "column": 6 },
+          "generated": { "line": 62, "column": 8 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 44, "column": 13 },
+          "generated": { "line": 62, "column": 15 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 44, "column": 14 },
+          "generated": { "line": 62, "column": 16 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 44, "column": 19 },
+          "generated": { "line": 62, "column": 21 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 44, "column": 20 },
+          "generated": { "line": 62, "column": 22 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 44, "column": 27 },
+          "generated": { "line": 62, "column": 29 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 44, "column": 28 },
+          "generated": { "line": 62, "column": 30 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 46, "column": 2 },
+          "generated": { "line": 64, "column": 4 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 46, "column": 3 },
+          "generated": { "line": 65, "column": 2 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 46, "column": 3 },
+          "generated": { "line": 66, "column": 2 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 46, "column": 3 },
+          "generated": { "line": 66, "column": 9 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 46, "column": 3 },
+          "generated": { "line": 66, "column": 32 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 46, "column": 3 },
+          "generated": { "line": 67, "column": 0 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 49, "column": 0 },
+          "generated": { "line": 68, "column": 0 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 49, "column": 6 },
+          "generated": { "line": 68, "column": 4 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 49, "column": 18 },
+          "generated": { "line": 68, "column": 16 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 49, "column": 21 },
+          "generated": { "line": 68, "column": 19 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 49, "column": 25 },
+          "generated": { "line": 68, "column": 23 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 49, "column": 48 },
+          "generated": { "line": 68, "column": 46 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 49, "column": 48 },
+          "generated": { "line": 68, "column": 47 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 49, "column": 50 },
+          "generated": { "line": 68, "column": 48 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 49, "column": 51 },
+          "generated": { "line": 68, "column": 49 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 49, "column": 63 },
+          "generated": { "line": 68, "column": 61 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 49, "column": 64 },
+          "generated": { "line": 69, "column": 0 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 49, "column": 64 },
+          "generated": { "line": 69, "column": 4 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 49, "column": 64 },
+          "generated": { "line": 69, "column": 12 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 49, "column": 64 },
+          "generated": { "line": 69, "column": 15 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 49, "column": 64 },
+          "generated": { "line": 69, "column": 22 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 49, "column": 64 },
+          "generated": { "line": 69, "column": 23 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 49, "column": 64 },
+          "generated": { "line": 69, "column": 30 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 50, "column": 15 },
+          "generated": { "line": 69, "column": 33 }
+        },
+        {
+          "source": "src/index.ts",
+          "name": null,
+          "original": { "line": 50, "column": 27 },
+          "generated": { "line": 69, "column": 45 }
+        }
+      ],
+      "sources": {
+        "src/index.ts": "interface TimePeriod {\n  startDate: string;\n  endDate: string;\n}\n\ninterface Customer {\n  ListOfPeriods?: string;\n}\n\nclass TimePeriodService {\n  static extractTimePeriod(period: string): TimePeriod | null {\n    const dates = period.split('-').map(date => date.trim());\n    if (dates.length !== 2 || dates.some(date => date.length !== 10)) {\n      return null;\n    }\n    return {\n      startDate: dates[0],\n      endDate: dates[1]\n    };\n  }\n\n  static extractTimePeriods(periods: string[]): TimePeriod[] {\n    return periods.map(period => {\n      const timePeriod = TimePeriodService.extractTimePeriod(period);\n      if (!timePeriod) {\n        throw new Error('string length is invalid');\n      }\n      return timePeriod;\n    });\n  }\n}\n\nclass ExtractDatesApplication {\n  extractDates(customer: Customer): TimePeriod[] | string[] {\n    if (!customer.ListOfPeriods) return [];\n\n    if (customer.ListOfPeriods.toUpperCase() === 'NULL') return [];\n\n    const periods: string[] = customer.ListOfPeriods.split('|').map(period => period.trim());\n\n    try {\n      return TimePeriodService.extractTimePeriods(periods);\n    } catch (error) {\n      return [error.message];\n    }\n  }\n}\n\nconst extractDates = new ExtractDatesApplication().extractDates;\nexport default extractDates;\n"
+      },
+      "lineCount": null
+    }
+  },
+  "error": null,
+  "hash": "10fcd137526e97b2ae703a43681b54b7",
+  "cacheData": { "env": {} }
+}
